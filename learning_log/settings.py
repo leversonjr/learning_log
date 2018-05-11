@@ -37,6 +37,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Aplicação de terceiros
+    'bootstrap3',
+    # Minhas aplicações
     'learning_logs',
     'users',
 )
@@ -122,5 +125,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Minhas configurações
-
 LOGIN_URL = '/users/login/'
+
+# Configuraçôes para django-bottstrap3
+BOOTSTRAP3 = {
+'include_jquery':True,
+
+}
