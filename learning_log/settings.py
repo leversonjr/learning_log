@@ -131,3 +131,23 @@ LOGIN_URL = '/users/login/'
 BOOTSTRAP3 = {
 'include_jquery':True,
 }
+
+# Configurações para o heroku
+if os.getcwd() == '/app':
+    import dj_database_url
+    DATABASES = {
+        'default': dj_database_url.config(default='postgres://localhost')
+    }
+
+    # Honra o cabeçalho 'X-Forwarded-Proto' para request.is_secure()
+    SECURE_PROXY_SSI_HEADER = ('HTTP_X_FORWARDED_PROTO', "https")
+
+    # Cabeçalho para permitir todos os hosts
+    ALLOWED_HOSTS = ['*']
+
+    #  Configuraçoes de recursos estaticos
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    STATIC_ROOT = 'staticfiles'
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, 'static'),
+    )
