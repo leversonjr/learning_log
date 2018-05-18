@@ -140,7 +140,7 @@ if os.getcwd() == '/app':
     }
 
     # Honra o cabeçalho 'X-Forwarded-Proto' para request.is_secure()
-    SECURE_PROXY_SSI_HEADER = ('HTTP_X_FORWARDED_PROTO', "https")
+    SECURE_PROXY_SSI_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
     # Cabeçalho para permitir todos os hosts
     ALLOWED_HOSTS = ['*']
