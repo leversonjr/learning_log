@@ -16,18 +16,23 @@
     <body>
 
         <!-- Static navbar -->
-        <nav class="navbar  navbar-default navbar-static-top">
+        <nav class="navbar navbar-inverse navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed"
                             data-toggle="collapse" data-target="#navbar"
                             aria-expanded="false" aria-controls="navbar">
                     </button>
-                    <a class="navbar-brand" href="{% url 'learning_logs:index'%}">Learning Log</a>
+                    <a class="navbar-brand" href="{% url 'learning_logs:index'%}">
+                        <button type="button" class="btn btn-info">Learning Log</button>
+                    </a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="{% url 'learning_logs:topics' %}" >Topics</a></li>
+                        <li>
+                            <a href="{% url 'learning_logs:topics' %}" >
+                                <button type="button" class="btn btn-info">Topics</button></a>
+                        </li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -35,14 +40,17 @@
                         <li><a>Hello, {{ user.username }}.</a></li>
                         <li>
                             <a href="{% url 'users:logout' %}">
-                                <button type="button" class="btn btn-danger">Log Out</button>
-                            </a></li>
+                            <button type="button" class="btn btn-danger">Log Out</button></a>
+                        </li>
                         {% else %}
-                        <li><a href="{% url 'users:register' %}">register</a> </li>
+                        <li>
+                            <a href="{% url 'users:register' %}">
+                            <button type="button" class="btn btn-warning">register</button></a>
+                        </li>
                         <li>
                             <a href="{% url 'users:login' %}">
-                                <button type="button" class="btn btn-primary">log in</button>
-                            </a></li>
+                            <button type="button" class="btn btn-primary">log in</button></a>
+                        </li>
                         {% endif %}
                     </ul>
 
