@@ -42,7 +42,7 @@ INSTALLED_APPS = (
     # Minhas aplicações
     'learning_logs',
     'users',
-    'storages'
+    'storages',
 )
 
 MIDDLEWARE = [
