@@ -35,6 +35,7 @@
                         </li>
                     </ul>
 
+                    <div id="login">
                     <ul class="nav navbar-nav navbar-right">
                         {% if user.is_authenticated %}
                         <li><a>Hello, {{ user.username }}.</a></li>
@@ -51,8 +52,13 @@
                             <a href="{% url 'users:login' %}">
                             <button type="button" class="btn btn-primary">log in</button></a>
                         </li>
+                        <li>
+                            <input type="checkbox" id="remember"/>
+                            <label for="remember">Remember me</label>
+                        </li>
                         {% endif %}
                     </ul>
+                    </div>
 
 
                 </div><!--/.nav-collapse-->
