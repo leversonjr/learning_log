@@ -35,7 +35,8 @@
                         </li>
                     </ul>
 
-                    <div id="login">
+
+
                     <ul class="nav navbar-nav navbar-right">
                         {% if user.is_authenticated %}
                         <li><a>Hello, {{ user.username }}.</a></li>
@@ -73,6 +74,8 @@
                 {% block content %}{% endblock content %}
 
             </div><!--/container-->
+
+
             <footer>
                 <p>Leverson Cordeiro &copy;</p>
             </footer>
