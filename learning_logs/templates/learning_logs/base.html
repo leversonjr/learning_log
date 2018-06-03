@@ -8,12 +8,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="{% static 'learning_logs/style.css'%}"/>
         <title>Learning Log</title>
+        <script>
+                function showTime(){
+                    var time = new Date();
+                    var hour = time.getHours();
+                    var minute = time.getMinutes();
+                    var second = time.getSeconds();
+
+                    if(hour<10) hour = "0"+hour;
+                    if(minute<10) minute = "0"+minute;
+                    if(second<10) second = "0"+second;
+                    var tempo = hour+":"+minute+":"+second;
+
+                    document.getElementById("timer").innerHTML=tempo;
+                 }
+                 function initTime(){
+                    setInterval(showTime, 1000);
+                    }
+         </script>
 
         {% bootstrap_css %}
         {% bootstrap_javascript %}
 
     </head>
-    <body>
+    <body onload="initTime();">
 
         <!-- Static navbar -->
         <nav class="navbar navbar-default navbar-static-top">
@@ -52,7 +70,9 @@
                         <li>
                             <a href="{% url 'users:login' %}">
                             <button type="button" class="btn btn-primary">log in</button></a>
+
                         </li>
+
 
                         {% endif %}
                     </ul>
@@ -65,9 +85,14 @@
             </div>
         </nav>
 
+
+
         <figure id="first">
             <img src="{% static 'learning_logs/images/construcao.gif' %}"  alt="Site em contrução"/>
         </figure>
+
+        <span id="timer">timer</span>
+
         <div class="container">
             <div class="page-header">
                 {% block header %}{% endblock header %}
@@ -82,8 +107,6 @@
              <footer>
                  <p>Leverson Cordeiro &copy;</p>
              </footer>
-
-
 
 
 
