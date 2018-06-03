@@ -65,15 +65,15 @@
             </div>
         </nav>
 
-
+        <figure id="first">
+            <img src="{% static 'learning_logs/images/construcao.gif' %}"  alt="Site em contrução"/>
+            <figcaption><h3>Site em contrução</h3></figcaption>
+        </figure>
         <div class="container">
             <div class="page-header">
                 {% block header %}{% endblock header %}
             </div>
-            <figure id="first">
-                <img src="{% static 'learning_logs/images/gestao-de-pessoas.png' %}" width="500" alt="Site em contrução"/>
-                <figcaption><h3>Site em contrução</h3></figcaption>
-            </figure>
+
             <div>
                 {% block content %}{% endblock content %}
 
